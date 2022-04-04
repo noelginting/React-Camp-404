@@ -25,7 +25,7 @@ const Login = ({navigation}) => {
         <Text style={styles.title}>Camp404 Store</Text>
         <TextInput
         placeholder="Email"
-        keyboardAppearance="email-address"
+        keyboardType="email-address"
         onChangeText={setEmail}
         value={email}
         style={styles.emailInput}/>

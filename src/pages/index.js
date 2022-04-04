@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
 import Login from './Login';
+import Home from './Home';
 
-export {Login};
+export {Login,Home};
