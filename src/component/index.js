@@ -1,4 +1,4 @@
 /* eslint-disable prettier/prettier */
 import Header from './Header';
-
-export {Header};
+import ProductCard from './ProductCard';
+export {Header, ProductCard};
