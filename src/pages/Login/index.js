@@ -15,7 +15,8 @@ const Login = ({navigation}) => {
   const [password, setPassword] = useState('');
 
   const login = () => {
-    navigation.replace('Home');
+    // navigation.replace('Home');
+    navigation.navigate('MainApp');
   };
 
   return (
