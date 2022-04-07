@@ -2,14 +2,14 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 
-const  currencyFormat = ({number}) => {
+const  currencyFormat = number => {
     return `Rp.${number?.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')}`;
 };
 const ProductCard = ({title,desc,price,image}) => {
   return (
     <View style={styles.container}>
         <Image source={{uri: image}} style={styles.image}/>
-        <View style={styles.contenWrapper}>
+        <View style={styles.contentWrapper}>
         <Text style={styles.title} numberOfLines={1}>
             {title}
         </Text>
@@ -93,5 +93,5 @@ const styles = StyleSheet.create({
     },
     actionDelete : {
         backgroundColor:'#DC3545',
-    }
+    },
 });
