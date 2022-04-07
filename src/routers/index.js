@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
 import BottomNavigator from '../component/BottomNavigator';
-import {Login,Home} from '../pages';
+import {Login,Home,Setting} from '../pages';
 
 const Stack = createStackNavigator();
 const Tap = createBottomTabNavigator();
@@ -15,7 +15,7 @@ function MainApp (){
     initialRouteName="Home"
     tabBar={props => <BottomNavigator {...props} />}>
       <Tap.Screen name ="Home" component={Home}/>
-      <Tap.Screen name ="Setting" component={Home}/>
+      <Tap.Screen name ="Setting" component={Setting}/>
     </Tap.Navigator>
   );
 }
