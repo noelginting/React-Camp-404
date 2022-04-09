@@ -8,6 +8,13 @@ import Images from '../../assets';
 const mapLink = 'https://goo.gl/maps/xgArh2zPM8HWFcuc9';
 
 const Setting = ({navigation}) => {
+    <TouchableOpacity
+    style={styles.itemSetting}
+    onPress={ () => navigation.navigate('AddProduct')}>
+    <Text style={styles.itemSettingText}>Add Product</Text>
+    <Image source={Images.ICRightArrow} style={styles.rightIcon}/>
+    </TouchableOpacity>
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const mapRedirect = useCallback(async () => {
         //checking if the link is supported for links with cusom url scheme.
