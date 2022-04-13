@@ -3,7 +3,7 @@ import {createStore} from 'redux';
 
 const initialState = {
     user:null,
-    acces_token:null,
+    access_token:null,
 };
 
 const reducer = (state = initialState, action) =>{
@@ -11,7 +11,7 @@ const reducer = (state = initialState, action) =>{
         return {
             ...state,
             user:action.value.user,
-            acces_token:action.value.acces_token,
+            access_token:action.value.access_token,
         };
     }
     return state;

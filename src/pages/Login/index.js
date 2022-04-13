@@ -24,13 +24,13 @@ const Login = ({navigation}) => {
     .post('http://api-test.q.camp404.com/public/api/login',{
       email:email,
       password:password,
-      passowrd_confirmation:password,
+      password_confirmation:password,
     })
     .then(response =>{
       let res = response.data;
       dispatch({
         type: 'SET_LOGIN',
-        value:{user: res.user, acces_token: res.acces_token},
+        value:{user:res.user, access_token:res.access_token},
       });
       navigation.navigate('MainApp');
     })

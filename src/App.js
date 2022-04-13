@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import React from 'react';
 import Routes from './routers';
 import {Provider} from 'react-redux';
@@ -13,9 +13,9 @@ LogBox.ignoreLogs([
 
 const App = () => {
   return (
-  <Provider store={store}>
-  <Routes/>;
-  </Provider>
+   <Provider store={store}>
+   <Routes />
+   </Provider>
   );
 };
 
