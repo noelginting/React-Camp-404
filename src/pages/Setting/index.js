@@ -13,7 +13,7 @@ const Setting = ({navigation}) => {
     onPress={ () => navigation.navigate('AddProduct')}>
     <Text style={styles.itemSettingText}>Add Product</Text>
     <Image source={Images.ICRightArrow} style={styles.rightIcon}/>
-    </TouchableOpacity>
+    </TouchableOpacity>;
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const mapRedirect = useCallback(async () => {
@@ -28,7 +28,7 @@ const Setting = ({navigation}) => {
     });
     return (
     <SafeAreaView style={styles.page}>
-        <Header title={'Setting'}/>
+        {/* <Header title={'Setting'}/> */}
         <View style={styles.container}>
         <Text style={styles.label}>List Setting</Text>
         <TouchableOpacity

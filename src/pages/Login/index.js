@@ -6,17 +6,37 @@ import { StyleSheet,
   TextInput,
   TouchableOpacity,
   Image,
+  Alert,
 } from 'react-native';
 import React,{useState} from 'react';
 import Images from '../../assets';
+import axios from 'axios';
+import {useDispatch} from 'react-redux';
 
 const Login = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
 
   const login = () => {
     // navigation.replace('Home');
-    navigation.navigate('MainApp');
+    axios
+    .post('http://api-test.q.camp404.com/public/api/login',{
+      email:email,
+      password:password,
+      passowrd_confirmation:password,
+    })
+    .then(response =>{
+      let res = response.data;
+      dispatch({
+        type: 'SET_LOGIN',
+        value:{user: res.user, acces_token: res.acces_token},
+      });
+      navigation.navigate('MainApp');
+    })
+    .catch(error => {
+      Alert.alert('Login Failed', error.response.data.message);
+    });
   };
 
   return (

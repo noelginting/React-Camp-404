@@ -3,6 +3,7 @@ import { FlatList, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { Header, ProductCard} from '../../component';
 //import { SafeAreaView } from 'react-native-safe-area-context';
+import { useSelector } from 'react-redux';
 
 const dummy = [
   {
@@ -37,9 +38,11 @@ const renderItem = ({item}) => (
   />
 );
 const Home = () => {
+  const stateGlobal = useSelector(state => state);
+  console.log('state global: ', stateGlobal);
   return (
     <SafeAreaView style={styles.page}>
-        <Header title={'Home'}/>
+        {/* <Header title={'Home'}/> */}
     <FlatList
         showsVerticalScrollIndicator={false}
         data={dummy}
