@@ -2,6 +2,8 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Routes from './routers';
+import {Provider} from 'react-redux';
+import store from './redux/store';
 
 import { LogBox } from 'react-native';
 
@@ -10,7 +12,11 @@ LogBox.ignoreLogs([
 ]);
 
 const App = () => {
-  return <Routes/>;
+  return (
+  <Provider store={store}>
+  <Routes/>;
+  </Provider>
+  );
 };
 
 export default App;
