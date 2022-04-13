@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
 import BottomNavigator from '../component/BottomNavigator';
-import {Login,Home,Setting, AddProduct} from '../pages';
+import {Login,Home,Setting, AddProduct,EditProduct} from '../pages';
 
 const Stack = createStackNavigator();
 const Tap = createBottomTabNavigator();
@@ -29,6 +29,7 @@ function Routes () {
     <Stack.Screen name="Login" component={Login}/>
     <Stack.Screen name="MainApp" component={MainApp}/>
     <Stack.Screen name="AddProduct" component={AddProduct}/>
+    <Stack.Screen name="EditProduct" component={EditProduct}/>
     </Stack.Navigator>
 </NavigationContainer>
   );

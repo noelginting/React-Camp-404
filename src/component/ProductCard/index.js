@@ -1,12 +1,14 @@
 /* eslint-disable prettier/prettier */
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 const  currencyFormat = number => {
     return `Rp.${number?.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')}`;
 };
 const ProductCard = ({title,desc,price,image}) => {
-  return (
+  const navigation = useNavigation();
+    return (
     <View style={styles.container}>
         <Image source={{uri: image}} style={styles.image}/>
         <View style={styles.contentWrapper}>
@@ -20,7 +22,13 @@ const ProductCard = ({title,desc,price,image}) => {
             {currencyFormat(price)}
         </Text>
         <View style={styles.actionWrapper}>
-        <TouchableOpacity>
+        <TouchableOpacity
+        onPress={() => navigation.navigate('EditProduct',{
+            title:title,
+            desc:desc,
+            price:price,
+            image:image,
+        })}>
             <View style={[styles.actionButton,styles.actionEdit]}>
                 <Text style={styles.actionText}>Edit</Text>
             </View>

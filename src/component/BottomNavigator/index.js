@@ -67,7 +67,7 @@ const BottomNavigator = ({state,descriptors,navigation}) => {
             onLongPress={onLongPress}>
             <Icon/>
             <Text style= {isFocused ? styles.btnTextActive : styles.btnText}>
-             {label};
+             {label}
             </Text>
             </TouchableOpacity>
         );
