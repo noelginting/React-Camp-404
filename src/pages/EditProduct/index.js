@@ -47,7 +47,7 @@ const EditProduct = ({navigation,route}) => {
         <Text style={styles.label}>Price</Text>
         <TextInput
         style={styles.textInput}
-        value={price}
+        value={price.toString()}
         onChangeText={setPrice}
         />
         <Text style={styles.label}>Photo</Text>

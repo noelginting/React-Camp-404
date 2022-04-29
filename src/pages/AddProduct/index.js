@@ -14,7 +14,7 @@ const AddProduct = ({navigation}) => {
   const [image, setImage] = useState();
   const [productName, setProductName] = useState('');
   const [description, setDescription] = useState('');
-  const [price, setPrice] = useState();
+  const [price, setPrice] = useState('');
 
   const save = async () =>{
     if (productName === '' || description === '' || price === '') {
@@ -30,11 +30,11 @@ const AddProduct = ({navigation}) => {
       gambar : `data:image/jpg;base64,${image.assets[0].base64}`,
     });
 
-    await axios ({
+    await axios({
       method: 'POST',
       url: url,
       headers: {
-        Authorizaton: `Bearer ${stateGlobal.access_token}`,
+        Authorization: `Bearer ${stateGlobal.access_token}`,
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       data: data,
@@ -45,6 +45,8 @@ const AddProduct = ({navigation}) => {
     })
     .catch(error =>{
       Alert.alert('Gagal Ditambahkan');
+      console.log('Gagal tambah' + error);
+      console.log('Isi Token' + stateGlobal.access_token);
     });
   };
 
@@ -92,7 +94,7 @@ const AddProduct = ({navigation}) => {
        { image?.assets ? (
          <Image
          source={{uri: image?.assets[0].uri}}
-         resizeMethod={'cover'}
+         resizeMode={'cover'}
          style={styles.previewImage}/>
        ) : (
          <Image source={Images.ICPlus} style={styles.plushIcon}/>

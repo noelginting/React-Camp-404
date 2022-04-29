@@ -3,8 +3,8 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 
-const  currencyFormat = number => {
-    return `Rp.${number?.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')}`;
+const currencyFormat = number => {
+    return `Rp ${number?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}`;
 };
 const ProductCard = ({title,desc,price,image}) => {
   const navigation = useNavigation();
